@@ -1,9 +1,10 @@
 <?php
 
-// ファイルの読み込み
+// 外部ファイルの読み込み
+// Task.phpにクラスの記述あるから
 require_once ('Models/Task.php');
 
-// データの受け取り
+// データの受け取り（create.phpから。$_POST['inputのname属性'])
 $title = $_POST['title'];
 $contents = $_POST['contents'];
 
