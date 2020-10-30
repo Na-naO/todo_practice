@@ -7,6 +7,8 @@ require_once('function.php');
 
 
 // データの取得
+
+// ①データベースとアクセス
 // まずタスククラスをインスタンス化
 $task = new Task();
 // タスククラスの中のgetAllというメソッドを使ってtasksテーブル内の全てのデータを取得
@@ -78,6 +80,7 @@ $tasks = $task->getAll();
                         </p>
                         <div class="text-right d-flex justify-content-end">
                             <!-- * href内を変更する -->
+                            <!-- ここのidはedit.phpで受け取ったid -->
                             <a href="edit.php?id=<? h($task['id']); ?>" class="btn text-success">EDIT</a>
                             <form action="delete.php" method="post">
                                 <!-- * valueの中にtaskのidが入るようにする -->

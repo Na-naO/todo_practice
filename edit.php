@@ -8,6 +8,7 @@ require_once('function.php');
 $id = $_GET['id'];
 
 // 3. DBへのデータ保存
+// インスタンス化とメソッドの呼び出しを一緒に行っている
 $task = (new Task())->findById($id);
 
 ?>
