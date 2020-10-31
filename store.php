@@ -28,4 +28,5 @@ $task->create([$title, $contents, $currentTime]);
 header('location:index.php');
 
 // 処理の終了
+// exitはforeach文などループ処理の中で処理を終了することも可
 exit;

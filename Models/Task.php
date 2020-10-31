@@ -26,6 +26,7 @@ class Task extends Model
     {
         // findById()と同様に準備を行ってから実行
         // WHEREでテーブルの中からどのデータのことを編集するのか指定
+        // 半角スペースを忘れない
         $stmt = $this->db_manager->dbh->prepare('UPDATE ' . $this->table . ' SET title = ?, contents = ? WHERE id = ?');
         $stmt->execute($data);
     }
