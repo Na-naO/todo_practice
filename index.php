@@ -81,10 +81,10 @@ $tasks = $task->getAll();
                         <div class="text-right d-flex justify-content-end">
                             <!-- * href内を変更する -->
                             <!-- ここのidはedit.phpで受け取ったid -->
-                            <a href="edit.php?id=<? h($task['id']); ?>" class="btn text-success">EDIT</a>
+                            <a href="edit.php?id=<?= h($task['id']); ?>" class="btn text-success">EDIT</a>
                             <form action="delete.php" method="post">
                                 <!-- * valueの中にtaskのidが入るようにする -->
-                                <input type="hidden" name="id" value="">
+                                <input type="hidden" name="id" value="<?= h($task['id']); ?>">
                                 <button type="submit" class="btn text-danger">DELETE</button>
                             </form>
                         </div>
