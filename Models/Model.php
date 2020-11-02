@@ -47,7 +47,21 @@ class Model
     }
 
     // * findById()を以下に追加する
+public function findById($id)
+{
+    //データベースの中からidに対応するタスクを探すコードを準備 
+    // 引数で受け取ったidと一致するものをtasksテーブルの中から受け取る（？の部分に受け取った引数が入る）
+    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
 
+    // 実行
+    $stmt->execute([$id]);
+
+    // 実行したコードを変数に代入
+    $task = $stmt->fetch();
+
+    // 最後に変数に代入したものを戻り値として返す
+    return $task;
+}
     
 
     

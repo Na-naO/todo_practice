@@ -1,13 +1,18 @@
 <?php
 // * 下記を追加
 // 1. ファイルの読み込み
-
+require_once('Models/Task.php');
+require_once('function.php');
 
 // 2. データの受け取り
-
+// index.phpファイルでクリックされたもののidを受け取る
+// index.phpのEDITの部分に対応している
+$id = $_GET['id'];
 
 // 3. DBへのデータ保存
-
+// インスタンス化とメソッドの呼び出しを一行で書いている
+// 下記書いたらfindByIdのメソッドを次に書く（Model.phpへ）
+$task = (new Task())->findById($id);
 
 ?>
 <!DOCTYPE html>
